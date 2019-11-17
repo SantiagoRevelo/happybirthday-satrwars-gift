@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Miwel Skywalker Regalator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="starwarsintro.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="starwarsintro.js" type="application/javascript"></script>
+</head>
+
+<body>
+    <div class="stars-bg"></div>
+    <article class="starwars">
+        <audio preload="auto">
+				<source src="assets/Star_Wars_original_opening_crawl_1977.ogg" type="audio/ogg" />
+				<source src="assets/Star_Wars_original_opening_crawl_1977.mp3" type="audio/mpeg" />
+			</audio>
+
+        <section class="start">
+            <p>
+                Joven padawan
+                <br>
+                <span>Preparate para vivir</span>
+                <br> la experiencia final
+                <br>
+                <span class="tilt">Pulsa para continuar</span>
+            </p>
+        </section>
+
+        <div class="animation">
+
+            <section class="intro">
+                Hace mucho tiempo, en una galaxia muy, muy lejana....
+            </section>
+
+            <section class="titles">
+                <div contenteditable="true" spellcheck="false">
+                    <p>
+                        Es momento de reunirnos los Jedis del consejo Monocular, en un intento de celebrar tu cumpleaños como la gran familia que somos.
+                    </p>
+                    <p>
+                        Seguramente estés leyendo esto enzarpadísima. Pero es momento de que te serenes.
+                    </p>
+                    <p>
+                        manten el pulso firme y rellena los datos del siguiente formulario. No falles que sólo tienes una oportunidad. Rellena bien los datos:
+                    </p>
+                    <form action="handle_form.php" method="post" accept-charset="utf-8">
+                        <div class="form-group">
+                            <label for="nameInput">Nombre</label>
+                            <input id="nameInput" type="text" name="name" placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailInput">Correo</label>
+                            <input id="emailInput" type="email" name="email" placeholder="Tu correo electrónico">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="radio" name="fecha" value="Jueves, 19 Diciembre 2019"> Jueves, 19 Diciembre 2019<br>
+                            </label>
+                            <label>
+                                <input type="radio" name="fecha" value="Viernes, 20 Diciembre 2019"> Viernes, 20 Diciembre 2019<br>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="radio" name="hora" value="19:00h">19:00h<br>
+                            </label>
+                            <label>
+                                <input type="radio" name="hora" value="22:15h">22:15h<br>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger btn-block">Enviar</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="logo">
+                <div class="starwars-demo">
+                    <img src="assets/star.svg" alt="Star" class="star">
+                    <img src="assets/wars.svg" alt="Wars" class="wars">
+                    <h2 class="byline" id="byline">Miwel Skywalker</h2>
+                </div>
+            </section>
+
+        </div>
+    </article>
+</body>
+
+</html>

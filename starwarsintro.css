@@ -1,0 +1,418 @@
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:700);
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font: 700 1em "News Cycle", sans-serif;
+    letter-spacing: .15em;
+    color: #ff6;
+    background: #000;
+    overflow: hidden;
+    margin: 0;
+}
+
+.starwars section {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    z-index: 1;
+}
+
+.starwars .start {
+    font-size: 200%;
+    width: 14em;
+    margin: -4em 0 0 -7em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.starwars .start span,
+form input {
+    color: #4bd5ee;
+}
+
+.starwars .intro {
+    width: 15em;
+    margin: 0 0 0 -7.5em;
+    font-size: 200%;
+    font-weight: 400;
+    color: #4bd5ee;
+    opacity: 0;
+    -webkit-animation: intro 6s ease-out 1s;
+    animation: intro 6s ease-out 1s;
+}
+
+.starwars .titles {
+    width: 14.65em;
+    margin: 0 0 0 -7.325em;
+    top: auto;
+    bottom: 0;
+    height: 50em;
+    font-size: 350%;
+    text-align: justify;
+    overflow: hidden;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: perspective(300px) rotateX(25deg);
+    transform: perspective(300px) rotateX(25deg);
+}
+
+.starwars .titles>div {
+    position: absolute;
+    top: 100%;
+    -webkit-animation: titles 30s linear 16s;
+    animation: titles 30s linear 16s;
+}
+
+.starwars .titles>div>p {
+    margin: 1.35em 0 1.85em 0;
+    line-height: 1.35em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.starwars .tilt {
+    -webkit-animation: tilt 1.5s ease-out infinite;
+    animation: tilt 1.5s ease-out infinite;
+}
+
+.star {
+    opacity: 0;
+    animation: star 9s ease-out 9s;
+}
+
+.wars {
+    opacity: 0;
+    animation: wars 9s ease-out 9s;
+}
+
+.byline span {
+    opacity: 0;
+    animation: spin-letters 9s linear 9s;
+}
+
+.byline {
+    animation: move-byline 9s linear 9s;
+}
+
+
+/* Make the 3D work on the container */
+
+.starwars-demo {
+    perspective: 800px;
+    transform-style: preserve3d;
+}
+
+
+/* General styles and layout */
+
+body {
+    background: #000;
+}
+
+.stars-bg {
+    opacity: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #000 url(assets/bg.jpg);
+}
+
+.stars-bg.on {
+    opacity: 1;
+    transition: opacity 2s 8s;
+}
+
+.starwars-demo {
+    height: 17em;
+    left: 50%;
+    position: absolute;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    width: 34em;
+}
+
+.byline span {
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+}
+
+.star,
+.wars,
+.byline {
+    position: absolute;
+}
+
+.star {
+    top: -2.5em;
+}
+
+.wars {
+    bottom: -0.5em;
+}
+
+.byline {
+    color: #fff;
+    font-family: "ITC Serif Gothic", Lato;
+    font-size: 2em;
+    left: -2em;
+    letter-spacing: 0.4em;
+    right: -2em;
+    text-align: center;
+    text-transform: uppercase;
+    top: 29%;
+}
+
+
+/*** Media queries for adjusting to different screen sizes ***/
+
+
+/*
+@media only screen and (max-width: 600px) {
+    .starwars-demo {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .starwars-demo {
+        font-size: 7px;
+    }
+}
+
+*/
+
+
+/* Keyframes */
+
+@-webkit-keyframes star {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-0.75em);
+    }
+    20% {
+        opacity: 1;
+    }
+    89% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+    }
+}
+
+@keyframes star {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-0.75em);
+    }
+    20% {
+        opacity: 1;
+    }
+    89% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+    }
+}
+
+@-webkit-keyframes wars {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(0.5em);
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+    }
+}
+
+@keyframes wars {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(0.5em);
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+    }
+}
+
+@-webkit-keyframes spin-letters {
+    0%,
+    10% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+    30% {
+        opacity: 1;
+    }
+    70%,
+    86% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+    95%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes spin-letters {
+    0%,
+    10% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+    30% {
+        opacity: 1;
+    }
+    70%,
+    86% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+    95%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes move-byline {
+    0% {
+        transform: translateZ(5em);
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}
+
+@keyframes move-byline {
+    0% {
+        transform: translateZ(5em);
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes intro {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes intro {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes titles {
+    0% {
+        top: 100%;
+        opacity: 1;
+    }
+    100% {
+        top: 30%;
+    }
+}
+
+@keyframes titles {
+    0% {
+        top: 100%;
+        opacity: 1;
+    }
+    100% {
+        top: 30%;
+    }
+}
+
+@-webkit-keyframes tilt {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes tilt {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
